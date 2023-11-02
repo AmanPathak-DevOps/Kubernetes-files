@@ -30,3 +30,15 @@ spec:
                 name: nginx-service3
                 port:
                   number: 80
+# Host Based Routing 
+    - host: example2.devops.in
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend: 
+              service:
+                name: nginx-service4
+                port:
+                  number: 80
+
