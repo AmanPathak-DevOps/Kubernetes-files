@@ -1,0 +1,7 @@
+---
+releases: 
+
+  - name: pythonpr
+    chart: ./helm-deploy-rest-api
+    installed: false
+

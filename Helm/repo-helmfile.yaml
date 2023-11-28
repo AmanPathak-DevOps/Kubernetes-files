@@ -9,6 +9,3 @@ releases:
     chart: ./helm-deploy-rest-api
     installed: false
 
-  - name: helloworld
-    chart: ./helloworld
-    installed: false
