@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+spec: 
+  replicas: 1
+  selector:
+    matchLabels:
+      app: school
+      tier: backend
+      track: stable
+  template:
+    metadata:
+      labels:
+        app: school
+        tier: backend
+        track: stable
+    spec:
+      containers:
+        - name: backend
+          image: avian19/backend-image:latest
+          ports:
+          - containerPort: 3500
+          env:
+          - name: MYSQL_HOST
+            value: mysql-service
+          - name: MYSQL_USER
+            value: root
+          - name: MYSQL_PASSWORD
+            value: mysql123
+          - name: MYSQL_DATABASE
+            value: school

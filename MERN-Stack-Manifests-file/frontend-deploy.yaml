@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: frontend-deployment
+spec: 
+  replicas: 2
+  selector:
+    matchLabels:
+      app: school
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        app: school
+        tier: frontend
+    spec:
+      containers: 
+      - name: frontend
+        image: avian19/frontend-image:1.1
+        ports: 
+        - containerPort: 80

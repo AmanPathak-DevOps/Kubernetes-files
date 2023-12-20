@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: apache
+spec:
+  selector:
+    app: apache-app
+  type: LoadBalancer
+  ports:
+  - protocol: TCP
+    port: 80
